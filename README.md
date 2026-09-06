@@ -1,10 +1,10 @@
-<!-- README.md | Atualizado em: 06-09-2026 09:10:21(GMT-04:00) -->
+<!-- README.md | Atualizado em: 06-09-2026 11:56:55(GMT-04:00) -->
 
 # 🧠 Painel de Contexto — vitalia-sdd
 
 <img src="https://img.shields.io/badge/Status-Ativo-success?style=flat-square" alt="Status" />
 <img src="https://img.shields.io/badge/Semáforo-LIVRE-success?style=flat-square" alt="Semáforo" />
-<img src="https://img.shields.io/badge/Ambiente-Integrado-purple?style=flat-square" alt="Ambiente" />
+<img src="https://img.shields.io/badge/Ambiente-Standalone-blue?style=flat-square" alt="Ambiente" />
 <img src="https://img.shields.io/badge/Sync-GMT--04%3A00-informational?style=flat-square" alt="Sync" />
 <img src="https://img.shields.io/badge/Grounding-Ativo-blueviolet?style=flat-square" alt="Grounding" />
 
@@ -20,9 +20,9 @@
 ```mermaid
 flowchart TD
   Cloud(("☁️ Git Remoto / Hub"))
-  M_7f367bd3["💻 andrenote<br/><i>Diagnóstico e Refatoração de Schemas do Motor de Contexto</i><br/><code>Integrado</code>"]
-  M_7f367bd3 <-->|"06-09-2026 09:09:05(GMT-04:00)"| Cloud
-  style M_7f367bd3 stroke:#8250df,stroke-width:2px,fill:#fbefff,color:#8250df
+  M_7f367bd3["💻 andrenote<br/><i>Evolução Context Engine (JSON Schemas)</i><br/><code>Standalone</code>"]
+  M_7f367bd3 <-->|"06-09-2026 11:56:55(GMT-04:00)"| Cloud
+  style M_7f367bd3 stroke:#0969da,stroke-width:2px,fill:#ddf4ff,color:#0969da
   style Cloud stroke:#1a7f37,stroke-width:2px,fill:#dafbe1,color:#1a7f37
 ```
 
@@ -46,11 +46,11 @@ flowchart TD
   <tbody>
     <tr>
       <td><strong>andrenote</strong> (<code>7f367bd3</code>)</td>
-      <td>Diagnóstico e Refatoração de Schemas do Motor de Contexto</td>
-      <td align="center"><img src="https://img.shields.io/badge/-Integrado-purple?style=flat-square" alt="Integrado" /></td>
+      <td>Evolução Context Engine (JSON Schemas)</td>
+      <td align="center"><img src="https://img.shields.io/badge/-Standalone-blue?style=flat-square" alt="Standalone" /></td>
       <td align="center"><span style="color:green;">●</span> Concluído</td>
-      <td>06-09-2026 09:09:05(GMT-04:00)</td>
-      <td><strong>Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate</strong></td>
+      <td>06-09-2026 11:56:55(GMT-04:00)</td>
+      <td><strong>Iniciar Tarefas T001-T008</strong></td>
     </tr>
   </tbody>
 </table>
@@ -60,9 +60,9 @@ flowchart TD
 ## 🎯 Sessão Ativa em Destaque
 
 - **Estação Ativa:** `andrenote` (`7f367bd3`)
-- **Tarefa em Execução:** Diagnóstico e Refatoração de Schemas do Motor de Contexto
-- **🎯 Próximo Passo Prioritário (P0):** `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate`
-- **Última Sincronização:** `06-09-2026 09:09:05(GMT-04:00)`
+- **Tarefa em Execução:** Evolução Context Engine (JSON Schemas)
+- **🎯 Próximo Passo Prioritário (P0):** `Iniciar Tarefas T001-T008`
+- **Última Sincronização:** `06-09-2026 11:56:55(GMT-04:00)`
 
 ---
 
@@ -75,6 +75,7 @@ flowchart TD
 
 | Data / Hora | Estação (ID) | Tarefa Executada | Próximo Passo (P0) |
 | :--- | :--- | :--- | :--- |
+| 06-09-2026 11:56:55(GMT-04:00) | `andrenote (7f367bd3)` | Evolução Context Engine (JSON Schemas) | `Iniciar Tarefas T001-T008` |
 | 06-09-2026 09:09:05(GMT-04:00) | `andrenote (7f367bd3)` | Diagnóstico e Refatoração de Schemas do Motor de Contexto | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
 | 06-09-2026 08:42:22(GMT-04:00) | `andrenote (7f367bd3)` | Diagnóstico e Refatoração de Schemas do Motor de Contexto | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
 | 03-09-2026 20:48:00(GMT-04:00) | `andrenote (7f367bd3)` | Setup do Ambiente e Alinhamento Estratégico Vitalia SDD v0.0.1 | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
@@ -88,6 +89,8 @@ flowchart TD
 
 | Máquina (ID) | Decisão Arquitetural | Impacto / Racional |
 | :--- | :--- | :--- |
+| `7f367bd3` | **[b98a0db7]** `[ARCH]` Armazenar JSON schemas canônicos em kit-global/src/schemas/. | Centraliza os artefatos de definição de tipo junto aos pacotes fonte (src) que os processam. |
+| `7f367bd3` | **[87d16a5b]** `[ARCH]` Validar schemas estritos via jsonschema em context_engine.py antes da escrita. | Evita corrupção da memória local, bloqueando o persistir de payloads mal-formados gerados por agentes. |
 | `7f367bd3` | **[d32e318c]** `[SCOPE]` Focar a primeira entrega na adequação dos 4 workflows de gestão de contexto (session-start, session-consolidate, session-end, vitalia-route). | Garantir ciclo limpo de sessão antes de expandir outros domínios. |
 | `7f367bd3` | **[1d0f3cdd]** `[ARCH]` Manter o /vitalia-brainstorming inalterado durante a transição inicial. | O brainstorming está em evolução deliberada para atuar como Hub Socrático Orquestrador do Ecossistema Multiagentes. |
 </details>
