@@ -1,7 +1,10 @@
-machine: andrenote
-machine_id: 7f367bd3
-last_sync: 03-09-2026 20:48:00(GMT-04:00)
-task: Setup do Ambiente e Alinhamento Estratégico Vitalia SDD v0.0.1
-steps: Verificação rigorosa e extensiva dos 4 workflows TOML principais. Identificação e correção de caminhos quebrados e extensão de arquivo. Limpeza e otimização do .gitignore. Inicialização do repositório Git base e vinculação com a origem remota.
-status: Concluído
-p0: Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate
+schema_version: "0.5.0"
+machine_name: "andrenote"
+machine_id: "7f367bd3"
+mode: "Integrado"
+current_task: "Diagnóstico e Refatoração de Schemas do Motor de Contexto"
+status: "Concluído"
+next_step: "Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate"
+last_sync: "06-09-2026 08:42:22(GMT-04:00)"
+steps_completed:
+  - "Diagnóstico profundo das falhas no comando /vitalia-session-start (erro de arquivo missing e painel corrompido). Investigação da raiz do problema: conflito entre o Schema v0.5.0, as chaves exigidas pelo motor Python, e o schema legado injetado através dos prompts. Refatoração dos arquivos estáticos de schema learning_schema.json e decision_schema.json para espelharem as chaves nativas do motor. Refatoração e blindagem da Fase 2 do workflow session-end.toml delegando a gravação estruturada à engine de contexto e usando arquivos temporários para mitigar quebras de Bash."
