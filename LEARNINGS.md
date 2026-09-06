@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 06-09-2026 08:44:00(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 06-09-2026 09:10:21(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `06-09-2026 08:44:00(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `06-09-2026 09:10:21(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
