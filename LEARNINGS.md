@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 06-09-2026 12:06:12(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 07-09-2026 19:02:29(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `06-09-2026 12:06:12(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `07-09-2026 19:02:29(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -27,3 +27,22 @@
 - **Aprendizado:** Na transição de registros cru-texto para schemas estruturados, a introdução de campos base (como schema_version e schema_type) no normalizer é crítica.
   - **Racional:** Essencial para garantir a sobrevivência de dados legados e compatibilidade em renderizações futuras e parsers rigorosos.
   - **Origem:** `andrenote` | **Data:** 06-09-2026 11:56:55(GMT-04:00)
+
+## KIT
+- **Aprendizado:** [KIT] Motor Guardian configurado mas nunca conectado aos workflows — [guardian] nunca declarado em nenhum TOML
+  - **Racional:** Todos os 9 workflows prioritários operavam sem injeção de contexto constitucional. Fix: [guardian] adicionado em session-start, brainstorming, vitalia-route, analyze, spec-specify, spec-plan, task-verifier, spec-implement, medical-gate.
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 18:58:42(GMT-04:00)
+- **Aprendizado:** [KIT] grounding-domains-local.yaml em profiles/ era VIEW em local incorreto — naming causava confusão com arquivo-fonte
+  - **Racional:** Arquivo VIEW gerado pelo motor de contexto estava sendo tratado como fonte. Correto: profiles/grounding_domains.yaml é a fonte; VIEW vai para .vitalia/memory/session/ (futuro).
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 18:58:42(GMT-04:00)
+- **Aprendizado:** [KIT] machine_id hardcoded '7f367bd3' = SHA256('andrenote')[:8] em vitalia_context_engine.py
+  - **Racional:** Fix P1 aplicado: derivar de VITALIA_MACHINE_NAME env var ou socket.gethostname() com SHA256[:8]. Princípio P11 (Hardware-Agnostic).
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 18:58:42(GMT-04:00)
+- **Aprendizado:** [KIT] scan_environment.py com exit(1) em DEGRADED bloqueava todos os workflows sem Redis
+  - **Racional:** Redis é infraestrutura opcional. Fix: exit(0) em DEGRADED; exit(1) apenas quando .env está ausente (sem configuração básica).
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 18:58:42(GMT-04:00)
+
+## PROJETO
+- **Aprendizado:** [PROJETO] TOMLs spec-plan e spec-specify referenciavam profiles/grounding_domains.yaml inexistente — grounding silenciosamente ignorado
+  - **Racional:** Arquivo criado com 9 domínios (llm_models, python_packages, external_apis, security_practices, regulations, cloud_services, scientific_claims, clinical_safety, hardware_specs) + authoritative_sources + trigger.
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 18:58:42(GMT-04:00)
