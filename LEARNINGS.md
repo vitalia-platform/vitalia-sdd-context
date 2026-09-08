@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 07-09-2026 23:31:11(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 08-09-2026 17:46:15(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `07-09-2026 23:31:11(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `08-09-2026 17:46:15(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -19,6 +19,12 @@
 - **Aprendizado:** Para blindar especificações arquiteturais, a inspeção de arquivos-fonte reais é indispensável. O uso de planos puramente dedutivos e genéricos gera lacunas e o risco de implementações destrutivas por IA.
   - **Racional:** Baseado na falha evitada durante o ciclo SDD onde um plano vago teria corrompido o código local.
   - **Origem:** `andrenote` | **Data:** 06-09-2026 11:56:55(GMT-04:00)
+- **Aprendizado:** O LLM não deve duplicar lógicas implementadas pelo orquestrador Python.
+  - **Racional:** Delegar compilação de markdown para o LLM aumenta taxa de erro e vulnerabilidade; o motor nativo garante determinismo e padronização das views (README.md, LEARNINGS.md).
+  - **Origem:** `andrenote` | **Data:** 08-09-2026 17:46:15(GMT-04:00)
+- **Aprendizado:** Schemas JSON injetados no context (Lifting) blindam a extração do LLM contra Prompt Injection e erros estruturais.
+  - **Racional:** A presença do schema durante o session-end e session-consolidate garante as chaves corretas e a semântica de domínios restritos antes do parse no Python/Bash.
+  - **Origem:** `andrenote` | **Data:** 08-09-2026 17:46:15(GMT-04:00)
 
 ## [PROJETO]
 - **Aprendizado:** O Vitalia SDD opera no paradigma de biblioteca geradora de SKILLs nos projetos via install-project.sh.
@@ -27,6 +33,9 @@
 - **Aprendizado:** Na transição de registros cru-texto para schemas estruturados, a introdução de campos base (como schema_version e schema_type) no normalizer é crítica.
   - **Racional:** Essencial para garantir a sobrevivência de dados legados e compatibilidade em renderizações futuras e parsers rigorosos.
   - **Origem:** `andrenote` | **Data:** 06-09-2026 11:56:55(GMT-04:00)
+- **Aprendizado:** Diferenciar caminhos de leitura e escrita isola variáveis de estado global versus logs locais
+  - **Racional:** Forçar leitura do Global YAML e restrição de append no Local JSONL evita corrupção assíncrona entre módulos do sistema SDD e agentes satélites.
+  - **Origem:** `andrenote` | **Data:** 08-09-2026 17:46:15(GMT-04:00)
 
 ## KIT
 - **Aprendizado:** [KIT] Motor Guardian configurado mas nunca conectado aos workflows — [guardian] nunca declarado em nenhum TOML

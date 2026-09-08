@@ -1,4 +1,4 @@
-<!-- README.md | Atualizado em: 07-09-2026 23:31:11(GMT-04:00) -->
+<!-- README.md | Atualizado em: 08-09-2026 17:46:15(GMT-04:00) -->
 
 # 🧠 Painel de Contexto — vitalia-sdd
 
@@ -20,8 +20,8 @@
 ```mermaid
 flowchart TD
   Cloud(("☁️ Git Remoto / Hub"))
-  M_7f367bd3["💻 andrenote<br/><i>Context Lifting e Session Fallback</i><br/><code>Integrado</code>"]
-  M_7f367bd3 <-->|"07-09-2026 23:30:11(GMT-04:00)"| Cloud
+  M_7f367bd3["💻 andrenote<br/><i>Vitalia SDD v0.6.0</i><br/><code>Integrado</code>"]
+  M_7f367bd3 <-->|"08-09-2026 17:46:15(GMT-04:00)"| Cloud
   style M_7f367bd3 stroke:#8250df,stroke-width:2px,fill:#fbefff,color:#8250df
   style Cloud stroke:#1a7f37,stroke-width:2px,fill:#dafbe1,color:#1a7f37
 ```
@@ -46,11 +46,11 @@ flowchart TD
   <tbody>
     <tr>
       <td><strong>andrenote</strong> (<code>7f367bd3</code>)</td>
-      <td>Context Lifting e Session Fallback</td>
+      <td>Vitalia SDD v0.6.0</td>
       <td align="center"><img src="https://img.shields.io/badge/-Integrado-purple?style=flat-square" alt="Integrado" /></td>
       <td align="center"><span style="color:green;">●</span> Concluído</td>
-      <td>07-09-2026 23:30:11(GMT-04:00)</td>
-      <td><strong>Executar a refatoração do vitalia_hook_runner.py conforme o plano de implementação aprovado.</strong></td>
+      <td>08-09-2026 17:46:15(GMT-04:00)</td>
+      <td><strong>Executar o comando `/vitalia-session-consolidate` para ativar o motor Python, gerar o novo painel `README.md` curado com nossos dados locais e sincronizar com o repositório na nuvem.</strong></td>
     </tr>
   </tbody>
 </table>
@@ -60,9 +60,9 @@ flowchart TD
 ## 🎯 Sessão Ativa em Destaque
 
 - **Estação Ativa:** `andrenote` (`7f367bd3`)
-- **Tarefa em Execução:** Context Lifting e Session Fallback
-- **🎯 Próximo Passo Prioritário (P0):** `Executar a refatoração do vitalia_hook_runner.py conforme o plano de implementação aprovado.`
-- **Última Sincronização:** `07-09-2026 23:30:11(GMT-04:00)`
+- **Tarefa em Execução:** Vitalia SDD v0.6.0
+- **🎯 Próximo Passo Prioritário (P0):** `Executar o comando `/vitalia-session-consolidate` para ativar o motor Python, gerar o novo painel `README.md` curado com nossos dados locais e sincronizar com o repositório na nuvem.`
+- **Última Sincronização:** `08-09-2026 17:46:15(GMT-04:00)`
 
 ---
 
@@ -75,6 +75,7 @@ flowchart TD
 
 | Data / Hora | Estação (ID) | Tarefa Executada | Próximo Passo (P0) |
 | :--- | :--- | :--- | :--- |
+| 08-09-2026 17:46:15(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 | `Executar o comando `/vitalia-session-consolidate` para ativar o motor Python, gerar o novo painel `README.md` curado com nossos dados locais e sincronizar com o repositório na nuvem.` |
 | 07-09-2026 23:30:11(GMT-04:00) | `andrenote (7f367bd3)` | Context Lifting e Session Fallback | `Executar a refatoração do vitalia_hook_runner.py conforme o plano de implementação aprovado.` |
 | 07-09-2026 21:34:49(GMT-04:00) | `andrenote (7f367bd3)` | Adequação do kit-global e análise de contexto | `(Pendente de definição pelo usuário)` |
 | 07-09-2026 18:58:42(GMT-04:00) | `andrenote (7f367bd3)` | Infraestrutura dos EUA | `Adicionar agents_catalog.yaml e refatorar view_renderer.py para geração de VIEW read-only de grounding_domains` |
@@ -92,6 +93,8 @@ flowchart TD
 
 | Máquina (ID) | Decisão Arquitetural | Impacto / Racional |
 | :--- | :--- | :--- |
+| `7f367bd3` | **[564628ec]** `[ARCH]` Criação do grounding_domain_schema.json e injeção (reads) no pipeline de finalização. | Estabelece um contrato formal de interoperabilidade que evita comandos shell malformados ou sobrescrita global de config de saúde/domínio. |
+| `7f367bd3` | **[996ac4fb]** `[ARCH]` Manter o modelo como consumidor passivo de Markdown gerado, abdicando da consolidação LLM-only. | A nova arquitetura 0.6 delega toda a consolidação ao motor Python. O LLM atua apenas como iterador de UI e coletor de schemas rígidos (session-end). |
 | `7f367bd3` | **[a752df1a]** `ARQUITETURA` profiles/ como pasta única para todas as fontes YAML — schema_type diferencia o tipo | Um único diretório para grep, auditoria e versionamento. Guardian detecta adaptador via schema_type, não pelo path. |
 | `7f367bd3` | **[85a6137b]** `ARQUITETURA` Q4 Guardian fallback: Opção B agora (fix path) + Opção C em v0.7.0 (remover fallback) | Fix cirúrgico de 1 linha — mínimo risco de regressão. Elimina dívida técnica na próxima versão. |
 | `7f367bd3` | **[d75f2168]** `ARQUITETURA` constitution.yaml usa Dual-Index (domain_index + principles) — formato O(1) para lookup | GuardianContextV2 detecta 'domain_index' no YAML e seleciona ConstitutionAdapterV2 automaticamente. |
