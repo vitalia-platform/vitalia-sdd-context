@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 07-09-2026 21:36:26(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 07-09-2026 23:31:11(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `07-09-2026 21:36:26(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `07-09-2026 23:31:11(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -47,6 +47,12 @@
 - **Aprendizado:** [KIT] Ausência de persistência do payload gerado pelo hook runner
   - **Racional:** O vitalia_hook_runner.py emite o json compilado (prompt + guardian_json) apenas no stdout para a IA, dificultando auditoria. O ideal seria persistir uma cópia em tmp/.
   - **Origem:** `andrenote` | **Data:** 07-09-2026 21:34:49(GMT-04:00)
+- **Aprendizado:** [KIT] Context Engineering para Modelos Locais
+  - **Racional:** Para suportar limites estritos de 8192 tokens, o payload do Guardian não pode ser ejetado integralmente no prompt inicial. O uso de arquivos temporários combinados com um Stub Referencial obriga o LLM a fazer Lazy Loading via tools, evitando OOM.
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 23:30:11(GMT-04:00)
+- **Aprendizado:** [KIT] Fallback de Sessão
+  - **Racional:** A variável VITALIA_SESSION_ID ainda não é exportada pela IDE no bootstrap. O uso de um timestamp higienizado (ex: YYYYMMDD_HHMMSS) como fallback garante a continuidade do fluxo temporal na nomenclatura dos arquivos de contexto temporários.
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 23:30:11(GMT-04:00)
 
 ## PROJETO
 - **Aprendizado:** [PROJETO] TOMLs spec-plan e spec-specify referenciavam profiles/grounding_domains.yaml inexistente — grounding silenciosamente ignorado
