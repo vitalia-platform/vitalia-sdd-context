@@ -1,7 +1,7 @@
-<!-- DECISIONS.md | Atualizado em: 07-09-2026 19:02:29(GMT-04:00) -->
+<!-- DECISIONS.md | Atualizado em: 07-09-2026 21:36:26(GMT-04:00) -->
 # 🏛️ Decisões de Arquitetura e Governança Consolidadas (ADRs)
 
-**Data/Hora de Geração:** `07-09-2026 19:02:29(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `07-09-2026 21:36:26(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 | ID | Categoria | Decisão | Racional | Máquina | Data |
 |---|---|---|---|---|---|

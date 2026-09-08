@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 07-09-2026 19:02:29(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 07-09-2026 21:36:26(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `07-09-2026 19:02:29(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `07-09-2026 21:36:26(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -41,6 +41,12 @@
 - **Aprendizado:** [KIT] scan_environment.py com exit(1) em DEGRADED bloqueava todos os workflows sem Redis
   - **Racional:** Redis é infraestrutura opcional. Fix: exit(0) em DEGRADED; exit(1) apenas quando .env está ausente (sem configuração básica).
   - **Origem:** `andrenote` | **Data:** 07-09-2026 18:58:42(GMT-04:00)
+- **Aprendizado:** [KIT] Falha na leitura do env_context.json no brainstorming
+  - **Racional:** O hook_runner redireciona o stdout do subprocesso (scan_environment.py) para o stderr, impedindo que o tmp/env_context.json seja gerado fisicamente no disco. Isso bloqueia o Socratic Gate de acessar o contexto do ambiente.
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 21:34:49(GMT-04:00)
+- **Aprendizado:** [KIT] Ausência de persistência do payload gerado pelo hook runner
+  - **Racional:** O vitalia_hook_runner.py emite o json compilado (prompt + guardian_json) apenas no stdout para a IA, dificultando auditoria. O ideal seria persistir uma cópia em tmp/.
+  - **Origem:** `andrenote` | **Data:** 07-09-2026 21:34:49(GMT-04:00)
 
 ## PROJETO
 - **Aprendizado:** [PROJETO] TOMLs spec-plan e spec-specify referenciavam profiles/grounding_domains.yaml inexistente — grounding silenciosamente ignorado
