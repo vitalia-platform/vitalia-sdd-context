@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 08-09-2026 17:50:03(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 08-09-2026 20:10:50(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `08-09-2026 17:50:03(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `08-09-2026 20:10:50(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -62,6 +62,9 @@
 - **Aprendizado:** [KIT] Fallback de Sessão
   - **Racional:** A variável VITALIA_SESSION_ID ainda não é exportada pela IDE no bootstrap. O uso de um timestamp higienizado (ex: YYYYMMDD_HHMMSS) como fallback garante a continuidade do fluxo temporal na nomenclatura dos arquivos de contexto temporários.
   - **Origem:** `andrenote` | **Data:** 07-09-2026 23:30:11(GMT-04:00)
+- **Aprendizado:** [KIT] A inicialização da nova versão do Kit (v0.6.0) flui sem falhas locais.
+  - **Racional:** O scan_environment.py reconhece com precisão as portas locais de Redis e Postgres, permitindo o avanço sem erros de dependência.
+  - **Origem:** `andrenote` | **Data:** 08-09-2026 20:09:41(GMT-04:00)
 
 ## PROJETO
 - **Aprendizado:** [PROJETO] TOMLs spec-plan e spec-specify referenciavam profiles/grounding_domains.yaml inexistente — grounding silenciosamente ignorado
