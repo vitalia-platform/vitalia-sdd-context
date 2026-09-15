@@ -1,6 +1,6 @@
-<!-- README.md | Atualizado em: 08-09-2026 20:10:50(GMT-04:00) -->
+<!-- README.md | Atualizado em: 14-09-2026 21:07:06(GMT-04:00) -->
 
-# 🧠 Painel de Contexto — kit-novo
+# 🧠 Painel de Contexto — vitalia-sdd
 
 <img src="https://img.shields.io/badge/Status-Ativo-success?style=flat-square" alt="Status" />
 <img src="https://img.shields.io/badge/Semáforo-LIVRE-success?style=flat-square" alt="Semáforo" />
@@ -20,8 +20,8 @@
 ```mermaid
 flowchart TD
   Cloud(("☁️ Git Remoto / Hub"))
-  M_7f367bd3["💻 andrenote<br/><i>Vitalia SDD v0.6.0</i><br/><code>Integrado</code>"]
-  M_7f367bd3 <-->|"08-09-2026 20:09:41(GMT-04:00)"| Cloud
+  M_7f367bd3["💻 andrenote<br/><i>Vitalia SDD v0.6.0 — Validação Fases 1-3</i><br/><code>Integrado</code>"]
+  M_7f367bd3 <-->|"14-09-2026 21:05:30(GMT-04:00)"| Cloud
   style M_7f367bd3 stroke:#8250df,stroke-width:2px,fill:#fbefff,color:#8250df
   style Cloud stroke:#1a7f37,stroke-width:2px,fill:#dafbe1,color:#1a7f37
 ```
@@ -46,11 +46,11 @@ flowchart TD
   <tbody>
     <tr>
       <td><strong>andrenote</strong> (<code>7f367bd3</code>)</td>
-      <td>Vitalia SDD v0.6.0</td>
+      <td>Vitalia SDD v0.6.0 — Validação Fases 1-3</td>
       <td align="center"><img src="https://img.shields.io/badge/-Integrado-purple?style=flat-square" alt="Integrado" /></td>
       <td align="center"><span style="color:green;">●</span> Concluído</td>
-      <td>08-09-2026 20:09:41(GMT-04:00)</td>
-      <td><strong>Aguardando definição na próxima sessão</strong></td>
+      <td>14-09-2026 21:05:30(GMT-04:00)</td>
+      <td><strong>Iniciar a Fase 4 do Plano de Refatoração (Fragmentação Modular dos Monolitos)</strong></td>
     </tr>
   </tbody>
 </table>
@@ -60,9 +60,9 @@ flowchart TD
 ## 🎯 Sessão Ativa em Destaque
 
 - **Estação Ativa:** `andrenote` (`7f367bd3`)
-- **Tarefa em Execução:** Vitalia SDD v0.6.0
-- **🎯 Próximo Passo Prioritário (P0):** `Aguardando definição na próxima sessão`
-- **Última Sincronização:** `08-09-2026 20:09:41(GMT-04:00)`
+- **Tarefa em Execução:** Vitalia SDD v0.6.0 — Validação Fases 1-3
+- **🎯 Próximo Passo Prioritário (P0):** `Iniciar a Fase 4 do Plano de Refatoração (Fragmentação Modular dos Monolitos)`
+- **Última Sincronização:** `14-09-2026 21:05:30(GMT-04:00)`
 
 ---
 
@@ -75,6 +75,7 @@ flowchart TD
 
 | Data / Hora | Estação (ID) | Tarefa Executada | Próximo Passo (P0) |
 | :--- | :--- | :--- | :--- |
+| 14-09-2026 21:05:30(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 — Validação Fases 1-3 | `Iniciar a Fase 4 do Plano de Refatoração (Fragmentação Modular dos Monolitos)` |
 | 08-09-2026 20:09:41(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 | `Aguardando definição na próxima sessão` |
 | 08-09-2026 17:46:15(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 | `Executar o comando `/vitalia-session-consolidate` para ativar o motor Python, gerar o novo painel `README.md` curado com nossos dados locais e sincronizar com o repositório na nuvem.` |
 | 07-09-2026 23:30:11(GMT-04:00) | `andrenote (7f367bd3)` | Context Lifting e Session Fallback | `Executar a refatoração do vitalia_hook_runner.py conforme o plano de implementação aprovado.` |
@@ -84,7 +85,6 @@ flowchart TD
 | 06-09-2026 09:09:05(GMT-04:00) | `andrenote (7f367bd3)` | Diagnóstico e Refatoração de Schemas do Motor de Contexto | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
 | 06-09-2026 08:42:22(GMT-04:00) | `andrenote (7f367bd3)` | Diagnóstico e Refatoração de Schemas do Motor de Contexto | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
 | 03-09-2026 20:48:00(GMT-04:00) | `andrenote (7f367bd3)` | Setup do Ambiente e Alinhamento Estratégico Vitalia SDD v0.0.1 | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
-| 29-08-2026 11:23:41(GMT-04:00) | `andrenote (7f367bd3)` | Setup do Ambiente e Alinhamento Estratégico Vitalia SDD v0.0.1 | `Adequação dos 4 workflows (session-start, session-consolidate, session-end, vitalia-route) e ajuste do .gitignore` |
 </details>
 
 <details>
@@ -94,6 +94,7 @@ flowchart TD
 
 | Máquina (ID) | Decisão Arquitetural | Impacto / Racional |
 | :--- | :--- | :--- |
+| `7f367bd3` | **[f8df0af0]** `ARQUITETURA` Execução de Smoke Tests nos pontos de entrada nativos após reinstalação do Kit | Assegura que o parser de --args e as chamadas sdd_judge.py estão operacionais antes de avançar para a Fase 4. |
 | `7f367bd3` | **[564628ec]** `[ARCH]` Criação do grounding_domain_schema.json e injeção (reads) no pipeline de finalização. | Estabelece um contrato formal de interoperabilidade que evita comandos shell malformados ou sobrescrita global de config de saúde/domínio. |
 | `7f367bd3` | **[996ac4fb]** `[ARCH]` Manter o modelo como consumidor passivo de Markdown gerado, abdicando da consolidação LLM-only. | A nova arquitetura 0.6 delega toda a consolidação ao motor Python. O LLM atua apenas como iterador de UI e coletor de schemas rígidos (session-end). |
 | `7f367bd3` | **[a752df1a]** `ARQUITETURA` profiles/ como pasta única para todas as fontes YAML — schema_type diferencia o tipo | Um único diretório para grep, auditoria e versionamento. Guardian detecta adaptador via schema_type, não pelo path. |

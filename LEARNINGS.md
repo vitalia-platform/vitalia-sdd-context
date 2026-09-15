@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 08-09-2026 20:10:50(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 14-09-2026 21:07:06(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `08-09-2026 20:10:50(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `14-09-2026 21:07:06(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -25,6 +25,12 @@
 - **Aprendizado:** Schemas JSON injetados no context (Lifting) blindam a extração do LLM contra Prompt Injection e erros estruturais.
   - **Racional:** A presença do schema durante o session-end e session-consolidate garante as chaves corretas e a semântica de domínios restritos antes do parse no Python/Bash.
   - **Origem:** `andrenote` | **Data:** 08-09-2026 17:46:15(GMT-04:00)
+- **Aprendizado:** [KIT] A validação automatizada através de smoke tests CLI confirma paridade de execução entre kit-global e ~/.vitalia.
+  - **Racional:** Garante que a reinstalação via kit-bootstrap.sh e install-project reflete instantaneamente as melhorias nos workflows e nos scripts nativos sem divergência de runtime.
+  - **Origem:** `andrenote` | **Data:** 14-09-2026 21:05:30(GMT-04:00)
+- **Aprendizado:** [KIT] Injeção de gates constitucionais sdd_judge nos TOMLs de workflow padroniza a verificação pré e pós-implementação.
+  - **Racional:** Elimina dependência de verificações manuais e garante que specs, plans, tasks e diffs atendam à constituição ativamente.
+  - **Origem:** `andrenote` | **Data:** 14-09-2026 21:05:30(GMT-04:00)
 
 ## [PROJETO]
 - **Aprendizado:** O Vitalia SDD opera no paradigma de biblioteca geradora de SKILLs nos projetos via install-project.sh.
