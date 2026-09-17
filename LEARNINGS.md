@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 16-09-2026 20:04:20(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 17-09-2026 14:25:36(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `16-09-2026 20:04:20(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `17-09-2026 14:25:36(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -77,8 +77,17 @@
 - **Aprendizado:** [KIT] A inicialização da nova versão do Kit (v0.6.0) flui sem falhas locais.
   - **Racional:** O scan_environment.py reconhece com precisão as portas locais de Redis e Postgres, permitindo o avanço sem erros de dependência.
   - **Origem:** `andrenote` | **Data:** 08-09-2026 20:09:41(GMT-04:00)
+- **Aprendizado:** [KIT] Trativa de comentários no parser load_dotenv_native
+  - **Racional:** Comentários inline no formato KEY= # comment sem espaço prévio devem ser sanitizados para não poluir variáveis em os.environ nem bloquear redefinições posteriores no arquivo .env.
+  - **Origem:** `andrenote` | **Data:** 17-09-2026 14:01:08(GMT-04:00)
+- **Aprendizado:** [KIT] Resiliência de APIs de Nuvem via Exponential Backoff
+  - **Racional:** Requisições de inferência cloud submetidas a flutuações de cota (HTTP 429) ou sobrecarga (HTTP 503) necessitam de retries com backoff exponencial progressivo (ex: 3s, 6s, 12s) para permitir o reset das janelas de taxa da API sem falhar precocemente.
+  - **Origem:** `andrenote` | **Data:** 17-09-2026 14:01:08(GMT-04:00)
 
 ## PROJETO
 - **Aprendizado:** [PROJETO] TOMLs spec-plan e spec-specify referenciavam profiles/grounding_domains.yaml inexistente — grounding silenciosamente ignorado
   - **Racional:** Arquivo criado com 9 domínios (llm_models, python_packages, external_apis, security_practices, regulations, cloud_services, scientific_claims, clinical_safety, hardware_specs) + authoritative_sources + trigger.
   - **Origem:** `andrenote` | **Data:** 07-09-2026 18:58:42(GMT-04:00)
+- **Aprendizado:** [PROJETO] Auto-bootstrap em CLI entrypoints
+  - **Racional:** Pontos de entrada CLI invocados diretamente pelo usuário (fora do vitalia_hook_runner.py) devem chamar kit_env_bootstrap.init() no início da função main() para garantir que o ambiente .env e .venv estejam carregados.
+  - **Origem:** `andrenote` | **Data:** 17-09-2026 14:01:08(GMT-04:00)

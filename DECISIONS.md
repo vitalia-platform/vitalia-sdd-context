@@ -1,7 +1,7 @@
-<!-- DECISIONS.md | Atualizado em: 16-09-2026 20:04:20(GMT-04:00) -->
+<!-- DECISIONS.md | Atualizado em: 17-09-2026 14:25:36(GMT-04:00) -->
 # 🏛️ Decisões de Arquitetura e Governança Consolidadas (ADRs)
 
-**Data/Hora de Geração:** `16-09-2026 20:04:20(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `17-09-2026 14:25:36(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 | ID | Categoria | Decisão | Racional | Máquina | Data |
 |---|---|---|---|---|---|
@@ -16,3 +16,4 @@
 | `564628ec` | `[ARCH]` | Criação do grounding_domain_schema.json e injeção (reads) no pipeline de finalização. | Estabelece um contrato formal de interoperabilidade que evita comandos shell malformados ou sobrescrita global de config de saúde/domínio. | `7f367bd3` | 08-09-2026 17:46:15(GMT-04:00) |
 | `f8df0af0` | `ARQUITETURA` | Execução de Smoke Tests nos pontos de entrada nativos após reinstalação do Kit | Assegura que o parser de --args e as chamadas sdd_judge.py estão operacionais antes de avançar para a Fase 4. | `7f367bd3` | 14-09-2026 21:05:30(GMT-04:00) |
 | `a65227df` | `ARQUITETURA` | Adoção da API REST do Google Gemini (gemini-3.5-flash - temp=0.2) via leitor dinâmico no .env (P11) como provedor principal do sdd_judge.py. | Garante alta velocidade de auditoria (< 3s), sem hardcoding de modelo, com resiliência por retry e fallback local para Ollama. | `7f367bd3` | 16-09-2026 20:01:34(GMT-04:00) |
+| `d8eb2682` | `ARQUITETURA` | Adoção de Exponential Backoff no GeminiRESTProvider para tratar erros HTTP 429 e HTTP 503 | Provedores de Nuvem REST em sub-agentes e hooks necessitam de retries exponenciais progressivos (3s, 6s, 12s, 24s, 48s) e 90s de timeout HTTP para absorver variações de carga e cota sem inviabilizar o pipeline. | `7f367bd3` | 17-09-2026 14:01:08(GMT-04:00) |

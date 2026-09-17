@@ -2,9 +2,14 @@ schema_version: "0.5.0"
 machine_name: "andrenote"
 machine_id: "7f367bd3"
 mode: "Integrado"
-current_task: "specs/001-refactor-clarify-converge"
+current_task: "specs/002-fragment-sdd-judge"
 status: "Concluído"
-next_step: "Executar o script de bootstrap install-project.sh para vincular formalmente a versão v0.6.0 do kit-global em ~/.vitalia/ e iniciar novo ciclo de desenvolvimento."
-last_sync: "16-09-2026 20:01:34(GMT-04:00)"
+next_step: "Realizar a consolidação de memórias e contexto via /vitalia-session-consolidate."
+last_sync: "17-09-2026 14:01:08(GMT-04:00)"
 steps_completed:
-  - "Refatoração completa do SDDJudge e extensões clarify/converge com suporte à API REST do Gemini (gemini-3.5-flash), taxonomia de 10 categorias de ambiguidade, schema JSON canônico, suíte de testes TDD unitários e 100% dos gates constitucionais aprovados."
+  - "- Decomposição modular do monolito sdd_judge.py em subpacote sdd_judge/ (evaluators/, providers/, prompts/, cli.py).
+- Atualização do install-project para sobrescrever AGENTS.md (com backup .bak) e mover skills órfãs para .trash/.
+- Depuração e correção da descoberta automática da chave GEMINI_API_KEY via CLI direta (/vitalia-debug).
+- Correção no parser load_dotenv_native em kit_env_bootstrap.py para remoção de comentários com # e sobreposição correta de chaves.
+- Implementação de Exponential Backoff (3s, 6s, 12s, 24s, 48s) e timeout de 90s em GeminiRESTProvider para sanar erros HTTP 429/503.
+- Execução e aprovação dos 23 testes unitários e testes end-to-end de CLI."
