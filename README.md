@@ -1,4 +1,4 @@
-<!-- README.md | Atualizado em: 14-09-2026 21:07:06(GMT-04:00) -->
+<!-- README.md | Atualizado em: 16-09-2026 20:04:20(GMT-04:00) -->
 
 # 🧠 Painel de Contexto — vitalia-sdd
 
@@ -20,8 +20,8 @@
 ```mermaid
 flowchart TD
   Cloud(("☁️ Git Remoto / Hub"))
-  M_7f367bd3["💻 andrenote<br/><i>Vitalia SDD v0.6.0 — Validação Fases 1-3</i><br/><code>Integrado</code>"]
-  M_7f367bd3 <-->|"14-09-2026 21:05:30(GMT-04:00)"| Cloud
+  M_7f367bd3["💻 andrenote<br/><i>specs/001-refactor-clarify-converge</i><br/><code>Integrado</code>"]
+  M_7f367bd3 <-->|"16-09-2026 20:01:34(GMT-04:00)"| Cloud
   style M_7f367bd3 stroke:#8250df,stroke-width:2px,fill:#fbefff,color:#8250df
   style Cloud stroke:#1a7f37,stroke-width:2px,fill:#dafbe1,color:#1a7f37
 ```
@@ -46,11 +46,11 @@ flowchart TD
   <tbody>
     <tr>
       <td><strong>andrenote</strong> (<code>7f367bd3</code>)</td>
-      <td>Vitalia SDD v0.6.0 — Validação Fases 1-3</td>
+      <td>specs/001-refactor-clarify-converge</td>
       <td align="center"><img src="https://img.shields.io/badge/-Integrado-purple?style=flat-square" alt="Integrado" /></td>
       <td align="center"><span style="color:green;">●</span> Concluído</td>
-      <td>14-09-2026 21:05:30(GMT-04:00)</td>
-      <td><strong>Iniciar a Fase 4 do Plano de Refatoração (Fragmentação Modular dos Monolitos)</strong></td>
+      <td>16-09-2026 20:01:34(GMT-04:00)</td>
+      <td><strong>Executar o script de bootstrap install-project.sh para vincular formalmente a versão v0.6.0 do kit-global em ~/.vitalia/ e iniciar novo ciclo de desenvolvimento.</strong></td>
     </tr>
   </tbody>
 </table>
@@ -60,9 +60,9 @@ flowchart TD
 ## 🎯 Sessão Ativa em Destaque
 
 - **Estação Ativa:** `andrenote` (`7f367bd3`)
-- **Tarefa em Execução:** Vitalia SDD v0.6.0 — Validação Fases 1-3
-- **🎯 Próximo Passo Prioritário (P0):** `Iniciar a Fase 4 do Plano de Refatoração (Fragmentação Modular dos Monolitos)`
-- **Última Sincronização:** `14-09-2026 21:05:30(GMT-04:00)`
+- **Tarefa em Execução:** specs/001-refactor-clarify-converge
+- **🎯 Próximo Passo Prioritário (P0):** `Executar o script de bootstrap install-project.sh para vincular formalmente a versão v0.6.0 do kit-global em ~/.vitalia/ e iniciar novo ciclo de desenvolvimento.`
+- **Última Sincronização:** `16-09-2026 20:01:34(GMT-04:00)`
 
 ---
 
@@ -75,6 +75,7 @@ flowchart TD
 
 | Data / Hora | Estação (ID) | Tarefa Executada | Próximo Passo (P0) |
 | :--- | :--- | :--- | :--- |
+| 16-09-2026 20:01:34(GMT-04:00) | `andrenote (7f367bd3)` | specs/001-refactor-clarify-converge | `Executar o script de bootstrap install-project.sh para vincular formalmente a versão v0.6.0 do kit-global em ~/.vitalia/ e iniciar novo ciclo de desenvolvimento.` |
 | 14-09-2026 21:05:30(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 — Validação Fases 1-3 | `Iniciar a Fase 4 do Plano de Refatoração (Fragmentação Modular dos Monolitos)` |
 | 08-09-2026 20:09:41(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 | `Aguardando definição na próxima sessão` |
 | 08-09-2026 17:46:15(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 | `Executar o comando `/vitalia-session-consolidate` para ativar o motor Python, gerar o novo painel `README.md` curado com nossos dados locais e sincronizar com o repositório na nuvem.` |
@@ -84,7 +85,6 @@ flowchart TD
 | 06-09-2026 11:56:55(GMT-04:00) | `andrenote (7f367bd3)` | Evolução Context Engine (JSON Schemas) | `Iniciar Tarefas T001-T008` |
 | 06-09-2026 09:09:05(GMT-04:00) | `andrenote (7f367bd3)` | Diagnóstico e Refatoração de Schemas do Motor de Contexto | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
 | 06-09-2026 08:42:22(GMT-04:00) | `andrenote (7f367bd3)` | Diagnóstico e Refatoração de Schemas do Motor de Contexto | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
-| 03-09-2026 20:48:00(GMT-04:00) | `andrenote (7f367bd3)` | Setup do Ambiente e Alinhamento Estratégico Vitalia SDD v0.0.1 | `Sincronizar o repositório de memória na nuvem através do comando /vitalia-session-consolidate` |
 </details>
 
 <details>
@@ -94,6 +94,7 @@ flowchart TD
 
 | Máquina (ID) | Decisão Arquitetural | Impacto / Racional |
 | :--- | :--- | :--- |
+| `7f367bd3` | **[a65227df]** `ARQUITETURA` Adoção da API REST do Google Gemini (gemini-3.5-flash | temp=0.2) via leitor dinâmico no .env (P11) como provedor principal do sdd_judge.py. | Garante alta velocidade de auditoria (< 3s), sem hardcoding de modelo, com resiliência por retry e fallback local para Ollama. |
 | `7f367bd3` | **[f8df0af0]** `ARQUITETURA` Execução de Smoke Tests nos pontos de entrada nativos após reinstalação do Kit | Assegura que o parser de --args e as chamadas sdd_judge.py estão operacionais antes de avançar para a Fase 4. |
 | `7f367bd3` | **[564628ec]** `[ARCH]` Criação do grounding_domain_schema.json e injeção (reads) no pipeline de finalização. | Estabelece um contrato formal de interoperabilidade que evita comandos shell malformados ou sobrescrita global de config de saúde/domínio. |
 | `7f367bd3` | **[996ac4fb]** `[ARCH]` Manter o modelo como consumidor passivo de Markdown gerado, abdicando da consolidação LLM-only. | A nova arquitetura 0.6 delega toda a consolidação ao motor Python. O LLM atua apenas como iterador de UI e coletor de schemas rígidos (session-end). |
@@ -103,7 +104,6 @@ flowchart TD
 | `7f367bd3` | **[b98a0db7]** `[ARCH]` Armazenar JSON schemas canônicos em kit-global/src/schemas/. | Centraliza os artefatos de definição de tipo junto aos pacotes fonte (src) que os processam. |
 | `7f367bd3` | **[87d16a5b]** `[ARCH]` Validar schemas estritos via jsonschema em context_engine.py antes da escrita. | Evita corrupção da memória local, bloqueando o persistir de payloads mal-formados gerados por agentes. |
 | `7f367bd3` | **[d32e318c]** `[SCOPE]` Focar a primeira entrega na adequação dos 4 workflows de gestão de contexto (session-start, session-consolidate, session-end, vitalia-route). | Garantir ciclo limpo de sessão antes de expandir outros domínios. |
-| `7f367bd3` | **[1d0f3cdd]** `[ARCH]` Manter o /vitalia-brainstorming inalterado durante a transição inicial. | O brainstorming está em evolução deliberada para atuar como Hub Socrático Orquestrador do Ecossistema Multiagentes. |
 </details>
 
 <details>

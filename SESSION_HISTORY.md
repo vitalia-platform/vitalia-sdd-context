@@ -1,7 +1,11 @@
-<!-- SESSION_HISTORY.md | Atualizado em: 14-09-2026 21:07:06(GMT-04:00) -->
+<!-- SESSION_HISTORY.md | Atualizado em: 16-09-2026 20:04:20(GMT-04:00) -->
 # 📜 Histórico Cronológico de Sessões
 
-**Data/Hora de Geração:** `14-09-2026 21:07:06(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `16-09-2026 20:04:20(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+
+### 🕒 16-09-2026 20:01:34(GMT-04:00) — `andrenote`
+- **Tarefa:** specs/001-refactor-clarify-converge
+- **Próximo Passo (P0):** `Executar o script de bootstrap install-project.sh para vincular formalmente a versão v0.6.0 do kit-global em ~/.vitalia/ e iniciar novo ciclo de desenvolvimento.`
 
 ### 🕒 14-09-2026 21:05:30(GMT-04:00) — `andrenote`
 - **Tarefa:** Vitalia SDD v0.6.0 — Validação Fases 1-3

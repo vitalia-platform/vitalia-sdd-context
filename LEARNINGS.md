@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 14-09-2026 21:07:06(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 16-09-2026 20:04:20(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `14-09-2026 21:07:06(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `16-09-2026 20:04:20(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -31,6 +31,12 @@
 - **Aprendizado:** [KIT] Injeção de gates constitucionais sdd_judge nos TOMLs de workflow padroniza a verificação pré e pós-implementação.
   - **Racional:** Elimina dependência de verificações manuais e garante que specs, plans, tasks e diffs atendam à constituição ativamente.
   - **Origem:** `andrenote` | **Data:** 14-09-2026 21:05:30(GMT-04:00)
+- **Aprendizado:** [KIT] A varredura holística de documentos inteiros no sdd_judge.py elimina gargalos de limite de taxa (HTTP 429) e melhora a compreensão contextual cruzada pelo Gemini API.
+  - **Racional:** Evita estourar a cota de requisições por minuto e permite avaliação integrada de specs complexas.
+  - **Origem:** `andrenote` | **Data:** 16-09-2026 20:01:34(GMT-04:00)
+- **Aprendizado:** [KIT] Preservar o motor sdd_judge.py 100% agnóstico de projetos garante interoperabilidade total do Vitalia Kit em múltiplos workspaces.
+  - **Racional:** Elimina acoplamento com estruturas locais e permite reutilização em qualquer repositório.
+  - **Origem:** `andrenote` | **Data:** 16-09-2026 20:01:34(GMT-04:00)
 
 ## [PROJETO]
 - **Aprendizado:** O Vitalia SDD opera no paradigma de biblioteca geradora de SKILLs nos projetos via install-project.sh.

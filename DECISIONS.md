@@ -1,7 +1,7 @@
-<!-- DECISIONS.md | Atualizado em: 14-09-2026 21:07:06(GMT-04:00) -->
+<!-- DECISIONS.md | Atualizado em: 16-09-2026 20:04:20(GMT-04:00) -->
 # 🏛️ Decisões de Arquitetura e Governança Consolidadas (ADRs)
 
-**Data/Hora de Geração:** `14-09-2026 21:07:06(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `16-09-2026 20:04:20(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 | ID | Categoria | Decisão | Racional | Máquina | Data |
 |---|---|---|---|---|---|
@@ -15,3 +15,4 @@
 | `996ac4fb` | `[ARCH]` | Manter o modelo como consumidor passivo de Markdown gerado, abdicando da consolidação LLM-only. | A nova arquitetura 0.6 delega toda a consolidação ao motor Python. O LLM atua apenas como iterador de UI e coletor de schemas rígidos (session-end). | `7f367bd3` | 08-09-2026 17:46:15(GMT-04:00) |
 | `564628ec` | `[ARCH]` | Criação do grounding_domain_schema.json e injeção (reads) no pipeline de finalização. | Estabelece um contrato formal de interoperabilidade que evita comandos shell malformados ou sobrescrita global de config de saúde/domínio. | `7f367bd3` | 08-09-2026 17:46:15(GMT-04:00) |
 | `f8df0af0` | `ARQUITETURA` | Execução de Smoke Tests nos pontos de entrada nativos após reinstalação do Kit | Assegura que o parser de --args e as chamadas sdd_judge.py estão operacionais antes de avançar para a Fase 4. | `7f367bd3` | 14-09-2026 21:05:30(GMT-04:00) |
+| `a65227df` | `ARQUITETURA` | Adoção da API REST do Google Gemini (gemini-3.5-flash - temp=0.2) via leitor dinâmico no .env (P11) como provedor principal do sdd_judge.py. | Garante alta velocidade de auditoria (< 3s), sem hardcoding de modelo, com resiliência por retry e fallback local para Ollama. | `7f367bd3` | 16-09-2026 20:01:34(GMT-04:00) |
