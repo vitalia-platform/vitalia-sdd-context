@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 18-09-2026 20:40:12(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 19-09-2026 07:58:04(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `18-09-2026 20:40:12(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `19-09-2026 07:58:04(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -37,6 +37,12 @@
 - **Aprendizado:** [KIT] Preservar o motor sdd_judge.py 100% agnóstico de projetos garante interoperabilidade total do Vitalia Kit em múltiplos workspaces.
   - **Racional:** Elimina acoplamento com estruturas locais e permite reutilização em qualquer repositório.
   - **Origem:** `andrenote` | **Data:** 16-09-2026 20:01:34(GMT-04:00)
+- **Aprendizado:** Validação AST prévia via py_compile em arquivos modificados por ferramentas automatizadas previne quebras de sintaxe Python antes do salvamento definitivo.
+  - **Racional:** Garante que scripts gerados ou manipulados por agentes não introduzam erros sintáticos em runtime.
+  - **Origem:** `andrenote` | **Data:** 19-09-2026 07:56:24(GMT-04:00)
+- **Aprendizado:** Estruturar matrizes temporárias de manutenção em schemas JSON validados permite auditoria segura e desacoplamento entre CLI e IDEs de IA.
+  - **Racional:** Assegura interoperabilidade entre ferramentas de manutenção e injeção transparente de contexto via Guardian.
+  - **Origem:** `andrenote` | **Data:** 19-09-2026 07:56:24(GMT-04:00)
 
 ## [PROJETO]
 - **Aprendizado:** O Vitalia SDD opera no paradigma de biblioteca geradora de SKILLs nos projetos via install-project.sh.
