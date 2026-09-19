@@ -2,14 +2,9 @@ schema_version: "0.5.0"
 machine_name: "andrenote"
 machine_id: "7f367bd3"
 mode: "Integrado"
-current_task: "specs/002-fragment-sdd-judge"
+current_task: "specs/003-gemini-provider-resilience"
 status: "Concluído"
-next_step: "Realizar a consolidação de memórias e contexto via /vitalia-session-consolidate."
-last_sync: "17-09-2026 14:01:08(GMT-04:00)"
+next_step: "Execução do /vitalia-release para a feature specs/003-gemini-provider-resilience ou início do próximo ciclo SDD."
+last_sync: "18-09-2026 20:39:08(GMT-04:00)"
 steps_completed:
-  - "- Decomposição modular do monolito sdd_judge.py em subpacote sdd_judge/ (evaluators/, providers/, prompts/, cli.py).
-- Atualização do install-project para sobrescrever AGENTS.md (com backup .bak) e mover skills órfãs para .trash/.
-- Depuração e correção da descoberta automática da chave GEMINI_API_KEY via CLI direta (/vitalia-debug).
-- Correção no parser load_dotenv_native em kit_env_bootstrap.py para remoção de comentários com # e sobreposição correta de chaves.
-- Implementação de Exponential Backoff (3s, 6s, 12s, 24s, 48s) e timeout de 90s em GeminiRESTProvider para sanar erros HTTP 429/503.
-- Execução e aprovação dos 23 testes unitários e testes end-to-end de CLI."
+  - "Especificação, Planejamento, Decomposição em tarefas, Implementação e Testes da feature specs/003-gemini-provider-resilience. Refatoração do GeminiRESTProvider com retryDelay parser, Full Jitter, Fail-Fast (400/401/403/404) e telemetria diária sanitizada. Reinstalação e validação de paridade SHA256 em 109 arquivos de ~/.vitalia/."

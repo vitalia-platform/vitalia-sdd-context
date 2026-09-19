@@ -1,7 +1,7 @@
-<!-- DECISIONS.md | Atualizado em: 17-09-2026 14:25:36(GMT-04:00) -->
+<!-- DECISIONS.md | Atualizado em: 18-09-2026 20:40:12(GMT-04:00) -->
 # 🏛️ Decisões de Arquitetura e Governança Consolidadas (ADRs)
 
-**Data/Hora de Geração:** `17-09-2026 14:25:36(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `18-09-2026 20:40:12(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 | ID | Categoria | Decisão | Racional | Máquina | Data |
 |---|---|---|---|---|---|
@@ -17,3 +17,5 @@
 | `f8df0af0` | `ARQUITETURA` | Execução de Smoke Tests nos pontos de entrada nativos após reinstalação do Kit | Assegura que o parser de --args e as chamadas sdd_judge.py estão operacionais antes de avançar para a Fase 4. | `7f367bd3` | 14-09-2026 21:05:30(GMT-04:00) |
 | `a65227df` | `ARQUITETURA` | Adoção da API REST do Google Gemini (gemini-3.5-flash - temp=0.2) via leitor dinâmico no .env (P11) como provedor principal do sdd_judge.py. | Garante alta velocidade de auditoria (< 3s), sem hardcoding de modelo, com resiliência por retry e fallback local para Ollama. | `7f367bd3` | 16-09-2026 20:01:34(GMT-04:00) |
 | `d8eb2682` | `ARQUITETURA` | Adoção de Exponential Backoff no GeminiRESTProvider para tratar erros HTTP 429 e HTTP 503 | Provedores de Nuvem REST em sub-agentes e hooks necessitam de retries exponenciais progressivos (3s, 6s, 12s, 24s, 48s) e 90s de timeout HTTP para absorver variações de carga e cota sem inviabilizar o pipeline. | `7f367bd3` | 17-09-2026 14:01:08(GMT-04:00) |
+| `fc8455b6` | `ARQUITETURA` | Adoção do modelo gemini-3.6-flash, Full Jitter e Telemetria Transacional em tmp/gemini_transactions.jsonl | Garante alta resiliência contra estresses de API (429/503), telemetria exata de consumo de tokens por sessão e failover para Ollama local sem travamentos. | `7f367bd3` | 17-09-2026 16:46:41(GMT-04:00) |
+| `9a527fd9` | `ARQUITETURA` | Adoção de parser de retryDelay, Full Jitter Backoff e Telemetria Transacional agregada por dia para a API Gemini | Previne estouro de quota em chamadas concorrentes dos hooks, reduz tempo de espera parsing retryDelay e sanitiza telemetria cumprindo P04 e P07 | `7f367bd3` | 18-09-2026 20:39:08(GMT-04:00) |

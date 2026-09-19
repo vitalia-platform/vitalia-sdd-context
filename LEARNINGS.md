@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 17-09-2026 14:25:36(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 18-09-2026 20:40:12(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `17-09-2026 14:25:36(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `18-09-2026 20:40:12(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -83,6 +83,18 @@
 - **Aprendizado:** [KIT] Resiliência de APIs de Nuvem via Exponential Backoff
   - **Racional:** Requisições de inferência cloud submetidas a flutuações de cota (HTTP 429) ou sobrecarga (HTTP 503) necessitam de retries com backoff exponencial progressivo (ex: 3s, 6s, 12s) para permitir o reset das janelas de taxa da API sem falhar precocemente.
   - **Origem:** `andrenote` | **Data:** 17-09-2026 14:01:08(GMT-04:00)
+- **Aprendizado:** [KIT] Migração de modelo para gemini-3.6-flash e extração de usageMetadata na REST API
+  - **Racional:** O modelo gemini-3.6-flash via API REST é a versão ativa oficial que retorna a estrutura usageMetadata (promptTokenCount, candidatesTokenCount, thoughtsTokenCount, totalTokenCount), eliminando falhas 404 e surtos 503 do gemini-3.5-flash.
+  - **Origem:** `andrenote` | **Data:** 17-09-2026 16:46:41(GMT-04:00)
+- **Aprendizado:** [KIT] Resiliência com Full Jitter e parsing de retryDelay em erros HTTP 429/503
+  - **Racional:** Erros HTTP 429 da API Gemini contêm a estrutura JSON details (QuotaFailure e RetryInfo) com a string retryDelay indicando o tempo exato de pausa antes da retentativa determinística no Python.
+  - **Origem:** `andrenote` | **Data:** 17-09-2026 16:46:41(GMT-04:00)
+- **Aprendizado:** [KIT] Resiliência com Full Jitter, parsing de retryDelay da API REST Gemini em erros HTTP 429/503 e Fail-Fast em 400/401/403/404
+  - **Racional:** Garante recuperação graciosa de estresses de cota (429/503) e evita desperdício de tentativas em erros não-recuperáveis de autenticação e sintaxe
+  - **Origem:** `andrenote` | **Data:** 18-09-2026 20:39:08(GMT-04:00)
+- **Aprendizado:** [KIT] Telemetria transacional sanitizada (P07) agregada em arquivos diários tmp/gemini_transactions_YYYYMMDD.jsonl
+  - **Racional:** Evita pulverização de arquivos temporários mantendo auditoria completa com timestamps GMT-04:00 (P04) e contagem precisa de tokens
+  - **Origem:** `andrenote` | **Data:** 18-09-2026 20:39:08(GMT-04:00)
 
 ## PROJETO
 - **Aprendizado:** [PROJETO] TOMLs spec-plan e spec-specify referenciavam profiles/grounding_domains.yaml inexistente — grounding silenciosamente ignorado
@@ -91,3 +103,9 @@
 - **Aprendizado:** [PROJETO] Auto-bootstrap em CLI entrypoints
   - **Racional:** Pontos de entrada CLI invocados diretamente pelo usuário (fora do vitalia_hook_runner.py) devem chamar kit_env_bootstrap.init() no início da função main() para garantir que o ambiente .env e .venv estejam carregados.
   - **Origem:** `andrenote` | **Data:** 17-09-2026 14:01:08(GMT-04:00)
+- **Aprendizado:** [PROJETO] Padronização estética de diagramas Mermaid em fundos foscos e opacos escuros
+  - **Racional:** A padronização dos diagramas Mermaid com estilos de nós foscos e escuros (fill:#1e1e2e, stroke:#89b4fa, stroke-width:2px, color:#ffffff) garante leitura perfeita tanto em temas claros quanto escuros nas IDEs.
+  - **Origem:** `andrenote` | **Data:** 17-09-2026 16:46:41(GMT-04:00)
+- **Aprendizado:** [PROJETO] Validação de paridade SHA256 entre kit-global/ e ~/.vitalia/ em 109 arquivos
+  - **Racional:** Garante consistência byte a byte dos scripts, hooks e perfis entre o repositório fonte e a instalação local
+  - **Origem:** `andrenote` | **Data:** 18-09-2026 20:39:08(GMT-04:00)
