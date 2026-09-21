@@ -1,4 +1,4 @@
-<!-- README.md | Atualizado em: 19-09-2026 07:58:04(GMT-04:00) -->
+<!-- README.md | Atualizado em: 21-09-2026 18:11:39(GMT-04:00) -->
 
 # 🧠 Painel de Contexto — vitalia-sdd
 
@@ -21,7 +21,7 @@
 flowchart TD
   Cloud(("☁️ Git Remoto / Hub"))
   M_7f367bd3["💻 andrenote<br/><i>specs/004-multiagent-ecosystem</i><br/><code>Integrado</code>"]
-  M_7f367bd3 <-->|"19-09-2026 07:56:24(GMT-04:00)"| Cloud
+  M_7f367bd3 <-->|"21-09-2026 18:07:25(GMT-04:00)"| Cloud
   style M_7f367bd3 stroke:#8250df,stroke-width:2px,fill:#fbefff,color:#8250df
   style Cloud stroke:#1a7f37,stroke-width:2px,fill:#dafbe1,color:#1a7f37
 ```
@@ -49,8 +49,8 @@ flowchart TD
       <td>specs/004-multiagent-ecosystem</td>
       <td align="center"><img src="https://img.shields.io/badge/-Integrado-purple?style=flat-square" alt="Integrado" /></td>
       <td align="center"><span style="color:green;">●</span> Concluído</td>
-      <td>19-09-2026 07:56:24(GMT-04:00)</td>
-      <td><strong>Execução do /vitalia-release para a feature specs/004-multiagent-ecosystem ou início de novo ciclo SDD.</strong></td>
+      <td>21-09-2026 18:07:25(GMT-04:00)</td>
+      <td><strong>Aprovação do Plano de Implementação pelo usuário para iniciar o ciclo SDD de refatoração do Kit.</strong></td>
     </tr>
   </tbody>
 </table>
@@ -61,8 +61,8 @@ flowchart TD
 
 - **Estação Ativa:** `andrenote` (`7f367bd3`)
 - **Tarefa em Execução:** specs/004-multiagent-ecosystem
-- **🎯 Próximo Passo Prioritário (P0):** `Execução do /vitalia-release para a feature specs/004-multiagent-ecosystem ou início de novo ciclo SDD.`
-- **Última Sincronização:** `19-09-2026 07:56:24(GMT-04:00)`
+- **🎯 Próximo Passo Prioritário (P0):** `Aprovação do Plano de Implementação pelo usuário para iniciar o ciclo SDD de refatoração do Kit.`
+- **Última Sincronização:** `21-09-2026 18:07:25(GMT-04:00)`
 
 ---
 
@@ -75,6 +75,7 @@ flowchart TD
 
 | Data / Hora | Estação (ID) | Tarefa Executada | Próximo Passo (P0) |
 | :--- | :--- | :--- | :--- |
+| 21-09-2026 18:07:25(GMT-04:00) | `andrenote (7f367bd3)` | specs/004-multiagent-ecosystem | `Aprovação do Plano de Implementação pelo usuário para iniciar o ciclo SDD de refatoração do Kit.` |
 | 19-09-2026 07:56:24(GMT-04:00) | `andrenote (7f367bd3)` | specs/004-multiagent-ecosystem | `Execução do /vitalia-release para a feature specs/004-multiagent-ecosystem ou início de novo ciclo SDD.` |
 | 18-09-2026 20:39:08(GMT-04:00) | `andrenote (7f367bd3)` | specs/003-gemini-provider-resilience | `Execução do /vitalia-release para a feature specs/003-gemini-provider-resilience ou início do próximo ciclo SDD.` |
 | 17-09-2026 16:46:41(GMT-04:00) | `andrenote (7f367bd3)` | specs/003-gemini-provider-resilience | `Análise da documentação recém-criada (docs/vitalia-sdd-architecture-guide.md, docs/onboarding-dev-guide.md e docs/research-gemini-resilience.md) e execução do /vitalia-spec-specify para a feature specs/003-gemini-provider-resilience.` |
@@ -84,7 +85,6 @@ flowchart TD
 | 08-09-2026 20:09:41(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 | `Aguardando definição na próxima sessão` |
 | 08-09-2026 17:46:15(GMT-04:00) | `andrenote (7f367bd3)` | Vitalia SDD v0.6.0 | `Executar o comando `/vitalia-session-consolidate` para ativar o motor Python, gerar o novo painel `README.md` curado com nossos dados locais e sincronizar com o repositório na nuvem.` |
 | 07-09-2026 23:30:11(GMT-04:00) | `andrenote (7f367bd3)` | Context Lifting e Session Fallback | `Executar a refatoração do vitalia_hook_runner.py conforme o plano de implementação aprovado.` |
-| 07-09-2026 21:34:49(GMT-04:00) | `andrenote (7f367bd3)` | Adequação do kit-global e análise de contexto | `(Pendente de definição pelo usuário)` |
 </details>
 
 <details>
@@ -94,6 +94,8 @@ flowchart TD
 
 | Máquina (ID) | Decisão Arquitetural | Impacto / Racional |
 | :--- | :--- | :--- |
+| `7f367bd3` | **[28817ce1]** `GOVERNANÇA` Adoção do Método C de Contabilidade de Tokens com severidade P10 BLOCKING | Monitoramento transparente de consumo em relação à cota gratuita oficial de 1.500 RPD Flash / 50 RPD Pro do AI Studio com obrigatoriedade de --help didático em todos os scripts Python. |
+| `7f367bd3` | **[dd4d3a4b]** `ARQUITETURA` Adoção do Roteamento Híbrido no .env (GEMINI_MODEL_PRO para Specify/Plan/Converge e GEMINI_MODEL_FLASH para Tasks/Implement) | Garante raciocínio superior e ausência de alucinação na concepção e na auditoria final, reservando velocidade e baixo custo para decomposição e codificação. |
 | `7f367bd3` | **[9a527fd9]** `ARQUITETURA` Adoção de parser de retryDelay, Full Jitter Backoff e Telemetria Transacional agregada por dia para a API Gemini | Previne estouro de quota em chamadas concorrentes dos hooks, reduz tempo de espera parsing retryDelay e sanitiza telemetria cumprindo P04 e P07 |
 | `7f367bd3` | **[fc8455b6]** `ARQUITETURA` Adoção do modelo gemini-3.6-flash, Full Jitter e Telemetria Transacional em tmp/gemini_transactions.jsonl | Garante alta resiliência contra estresses de API (429/503), telemetria exata de consumo de tokens por sessão e failover para Ollama local sem travamentos. |
 | `7f367bd3` | **[d8eb2682]** `ARQUITETURA` Adoção de Exponential Backoff no GeminiRESTProvider para tratar erros HTTP 429 e HTTP 503 | Provedores de Nuvem REST em sub-agentes e hooks necessitam de retries exponenciais progressivos (3s, 6s, 12s, 24s, 48s) e 90s de timeout HTTP para absorver variações de carga e cota sem inviabilizar o pipeline. |
@@ -102,8 +104,6 @@ flowchart TD
 | `7f367bd3` | **[564628ec]** `[ARCH]` Criação do grounding_domain_schema.json e injeção (reads) no pipeline de finalização. | Estabelece um contrato formal de interoperabilidade que evita comandos shell malformados ou sobrescrita global de config de saúde/domínio. |
 | `7f367bd3` | **[996ac4fb]** `[ARCH]` Manter o modelo como consumidor passivo de Markdown gerado, abdicando da consolidação LLM-only. | A nova arquitetura 0.6 delega toda a consolidação ao motor Python. O LLM atua apenas como iterador de UI e coletor de schemas rígidos (session-end). |
 | `7f367bd3` | **[a752df1a]** `ARQUITETURA` profiles/ como pasta única para todas as fontes YAML — schema_type diferencia o tipo | Um único diretório para grep, auditoria e versionamento. Guardian detecta adaptador via schema_type, não pelo path. |
-| `7f367bd3` | **[85a6137b]** `ARQUITETURA` Q4 Guardian fallback: Opção B agora (fix path) + Opção C em v0.7.0 (remover fallback) | Fix cirúrgico de 1 linha — mínimo risco de regressão. Elimina dívida técnica na próxima versão. |
-| `7f367bd3` | **[d75f2168]** `ARQUITETURA` constitution.yaml usa Dual-Index (domain_index + principles) — formato O(1) para lookup | GuardianContextV2 detecta 'domain_index' no YAML e seleciona ConstitutionAdapterV2 automaticamente. |
 </details>
 
 <details>

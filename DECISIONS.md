@@ -1,7 +1,7 @@
-<!-- DECISIONS.md | Atualizado em: 19-09-2026 07:58:04(GMT-04:00) -->
+<!-- DECISIONS.md | Atualizado em: 21-09-2026 18:11:39(GMT-04:00) -->
 # 🏛️ Decisões de Arquitetura e Governança Consolidadas (ADRs)
 
-**Data/Hora de Geração:** `19-09-2026 07:58:04(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `21-09-2026 18:11:39(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 | ID | Categoria | Decisão | Racional | Máquina | Data |
 |---|---|---|---|---|---|
@@ -19,3 +19,5 @@
 | `d8eb2682` | `ARQUITETURA` | Adoção de Exponential Backoff no GeminiRESTProvider para tratar erros HTTP 429 e HTTP 503 | Provedores de Nuvem REST em sub-agentes e hooks necessitam de retries exponenciais progressivos (3s, 6s, 12s, 24s, 48s) e 90s de timeout HTTP para absorver variações de carga e cota sem inviabilizar o pipeline. | `7f367bd3` | 17-09-2026 14:01:08(GMT-04:00) |
 | `fc8455b6` | `ARQUITETURA` | Adoção do modelo gemini-3.6-flash, Full Jitter e Telemetria Transacional em tmp/gemini_transactions.jsonl | Garante alta resiliência contra estresses de API (429/503), telemetria exata de consumo de tokens por sessão e failover para Ollama local sem travamentos. | `7f367bd3` | 17-09-2026 16:46:41(GMT-04:00) |
 | `9a527fd9` | `ARQUITETURA` | Adoção de parser de retryDelay, Full Jitter Backoff e Telemetria Transacional agregada por dia para a API Gemini | Previne estouro de quota em chamadas concorrentes dos hooks, reduz tempo de espera parsing retryDelay e sanitiza telemetria cumprindo P04 e P07 | `7f367bd3` | 18-09-2026 20:39:08(GMT-04:00) |
+| `dd4d3a4b` | `ARQUITETURA` | Adoção do Roteamento Híbrido no .env (GEMINI_MODEL_PRO para Specify/Plan/Converge e GEMINI_MODEL_FLASH para Tasks/Implement) | Garante raciocínio superior e ausência de alucinação na concepção e na auditoria final, reservando velocidade e baixo custo para decomposição e codificação. | `7f367bd3` | 21-09-2026 18:07:25(GMT-04:00) |
+| `28817ce1` | `GOVERNANÇA` | Adoção do Método C de Contabilidade de Tokens com severidade P10 BLOCKING | Monitoramento transparente de consumo em relação à cota gratuita oficial de 1.500 RPD Flash / 50 RPD Pro do AI Studio com obrigatoriedade de --help didático em todos os scripts Python. | `7f367bd3` | 21-09-2026 18:07:25(GMT-04:00) |

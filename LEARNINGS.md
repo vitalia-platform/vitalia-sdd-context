@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 19-09-2026 07:58:04(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 21-09-2026 18:11:39(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `19-09-2026 07:58:04(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `21-09-2026 18:11:39(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -43,6 +43,15 @@
 - **Aprendizado:** Estruturar matrizes temporárias de manutenção em schemas JSON validados permite auditoria segura e desacoplamento entre CLI e IDEs de IA.
   - **Racional:** Assegura interoperabilidade entre ferramentas de manutenção e injeção transparente de contexto via Guardian.
   - **Origem:** `andrenote` | **Data:** 19-09-2026 07:56:24(GMT-04:00)
+- **Aprendizado:** Auto-descoberta nativa do workspace: a função find_project_root() do kit_env_bootstrap.py elimina a necessidade de passar --cwd={{cwd}} em hooks, pois sobe a árvore de diretórios a partir do cwd por padrão.
+  - **Racional:** Evita redundância de parâmetros em extensions .toml e garante desacoplamento de caminhos.
+  - **Origem:** `andrenote` | **Data:** 21-09-2026 18:07:25(GMT-04:00)
+- **Aprendizado:** Roteamento Híbrido de Modelos por Criticidade: Estágios de concepção e convergência final exigem a classe PRO (gemini-3.1-pro-preview) para prevenir alucinações e falhas de governança, enquanto tarefas de decomposição e codificação operam idealmente com modelos FLASH ou Locais.
+  - **Racional:** Garante alta qualidade arquitetural onde é mais crítico e reduz custos/latência nas fases executivas.
+  - **Origem:** `andrenote` | **Data:** 21-09-2026 18:07:25(GMT-04:00)
+- **Aprendizado:** Contabilidade por Cotas Gratuita (Método C): A auditoria transacional via gemini_transactions_YYYYMMDD.jsonl possibilita rastrear o consumo diário contra as cotas gratuitas oficiais do Google AI Studio (1.500 RPD Flash / 50 RPD Pro) com indicação clara de isenção de faturamento.
+  - **Racional:** Fornece transparência financeira sem sobrecarregar com configurações manuais de faturamento.
+  - **Origem:** `andrenote` | **Data:** 21-09-2026 18:07:25(GMT-04:00)
 
 ## [PROJETO]
 - **Aprendizado:** O Vitalia SDD opera no paradigma de biblioteca geradora de SKILLs nos projetos via install-project.sh.
