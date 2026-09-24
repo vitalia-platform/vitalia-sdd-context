@@ -1,7 +1,7 @@
-<!-- LEARNINGS.md | Atualizado em: 21-09-2026 18:11:39(GMT-04:00) -->
+<!-- LEARNINGS.md | Atualizado em: 24-09-2026 19:05:32(GMT-04:00) -->
 # 💡 Aprendizados Técnicos e Lições Aprendidas Consolidadas
 
-**Data/Hora de Geração:** `21-09-2026 18:11:39(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
+**Data/Hora de Geração:** `24-09-2026 19:05:32(GMT-04:00)` | **Fuso Horário:** America/Cuiaba `(GMT-04:00)`
 
 ## [KIT]
 - **Aprendizado:** A centralização de regras em constitution_data.yaml combinada com pruning do guardian_context.py substitui a replicação de arquivos .md em projetos.
@@ -52,6 +52,12 @@
 - **Aprendizado:** Contabilidade por Cotas Gratuita (Método C): A auditoria transacional via gemini_transactions_YYYYMMDD.jsonl possibilita rastrear o consumo diário contra as cotas gratuitas oficiais do Google AI Studio (1.500 RPD Flash / 50 RPD Pro) com indicação clara de isenção de faturamento.
   - **Racional:** Fornece transparência financeira sem sobrecarregar com configurações manuais de faturamento.
   - **Origem:** `andrenote` | **Data:** 21-09-2026 18:07:25(GMT-04:00)
+- **Aprendizado:** O script de promoção (kit-bootstrap.sh) necessita da trava interativa HITL antes da operação de rsync para estar em conformidade com as regras de bloqueio de ações destrutivas (prevenção de danos locais).
+  - **Racional:** Evitar sobrescrita acidental de arquivos locais durante a atualização do kit.
+  - **Origem:** `andrenote` | **Data:** 24-09-2026 19:03:52(GMT-04:00)
+- **Aprendizado:** O mecanismo de benchmark (model_benchmark.py) não está aplicando a métrica de 3 Warm Runs consecutivas e carece de serialização robusta do resultado no schema do Redis com o TTL correspondente.
+  - **Racional:** Assegurar que o roteamento de nós baseie-se em estatísticas de TPS consistentes conforme especificado pela arquitetura.
+  - **Origem:** `andrenote` | **Data:** 24-09-2026 19:03:52(GMT-04:00)
 
 ## [PROJETO]
 - **Aprendizado:** O Vitalia SDD opera no paradigma de biblioteca geradora de SKILLs nos projetos via install-project.sh.
